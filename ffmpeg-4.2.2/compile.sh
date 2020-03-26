@@ -1,8 +1,11 @@
 #!/bin/sh
+AAA="-I${HOME}/ffmpeg_build/include -I/usr/local/cuda-10.2/include"
+echo $AAA
 
-if [ -d /usr/local/cuda-10.2/ ]; then
-  EXTRA_CFLAGS="-I$HOME/ffmpeg_build/include -I/usr/local/cuda-10.2/include"
-  EXTRA_LDFLAGS="-L$HOME/ffmpeg_build/lib -L/usr/local/cuda-10.2/lib64"
+
+if [ ! -d /usr/local/cuda-10.2/ ]; then
+  EXTRA_CFLAGS="-I${HOME}/ffmpeg_build/include\ -I/usr/local/cuda-10.2/include"
+  EXTRA_LDFLAGS="-L$HOME/ffmpeg_build/lib\ -L/usr/local/cuda-10.2/lib64"
   EXTRA_NVIDIA_ENABLE="--enable-cuda --enable-cuvid --enable-nvenc --enable-lipnpp"
 else
   EXTRA_CFLAGS="-I$HOME/ffmpeg_build/include"
@@ -10,12 +13,14 @@ else
   EXTRA_NVIDIA_ENABLE=""
 fi
 
+echo $EXTRA_CFLAGS
+
 if [ -f /etc/redhat-release ]; then
   PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
   --prefix="$HOME/ffmpeg_build" \
   --pkg-config-flags="--static" \
-  --extra-cflags=${EXTRA_CFLAGS} \
-  --extra-ldflags=${EXTRA_LDFLAGS} \
+  --extra-cflags="${EXTRA_CFLAGS}" \
+  --extra-ldflags="${EXTRA_LDFLAGS}" \
   --disable-debug \
   --extra-libs=-lpthread \
   --extra-libs=-lm \
@@ -39,8 +44,8 @@ if [ -f /etc/lsb-release ]; then
   PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
   --prefix="$HOME/ffmpeg_build" \
   --pkg-config-flags="--static" \
-  --extra-cflags=${EXTRA_CFLAGS} \
-  --extra-ldflags=${EXTRA_LDFLAGS} \
+  --extra-cflags="${EXTRA_CFLAGS}" \
+  --extra-ldflags="${EXTRA_LDFLAGS}" \
   --disable-debug \
   --extra-libs=-lpthread \
   --extra-libs=-lm \
