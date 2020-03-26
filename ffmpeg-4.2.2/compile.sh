@@ -1,7 +1,4 @@
 #!/bin/sh
-AAA="-I${HOME}/ffmpeg_build/include -I/usr/local/cuda-10.2/include"
-echo $AAA
-
 
 if [ ! -d /usr/local/cuda-10.2/ ]; then
   EXTRA_CFLAGS="-I${HOME}/ffmpeg_build/include\ -I/usr/local/cuda-10.2/include"
@@ -12,8 +9,6 @@ else
   EXTRA_LDFLAGS="-L$HOME/ffmpeg_build/lib"
   EXTRA_NVIDIA_ENABLE=""
 fi
-
-echo $EXTRA_CFLAGS
 
 if [ -f /etc/redhat-release ]; then
   PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
