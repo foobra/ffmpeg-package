@@ -36,6 +36,8 @@ if [ -f /etc/lsb-release ]; then
 fi
 cd -
 cd ffmpeg-4.2.2
+
+if [ ! -d /usr/local/cuda-10.2/ ]; then
   EXTRA_CFLAGS="-I${HOME}/ffmpeg_build/include\ -I/usr/local/cuda-10.2/include"
   EXTRA_LDFLAGS="-L$HOME/ffmpeg_build/lib\ -L/usr/local/cuda-10.2/lib64"
   EXTRA_NVIDIA_ENABLE="--enable-cuda --enable-cuvid --enable-nvenc --enable-lipnpp"
@@ -93,4 +95,5 @@ if [ -f /etc/lsb-release ]; then
   ${EXTRA_NVIDIA_ENABLE} \
  &&  PATH="$HOME/bin:$PATH" && make -j `nproc` && make install
 fi
+
 cd -
