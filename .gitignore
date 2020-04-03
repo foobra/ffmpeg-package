@@ -69,16 +69,16 @@ m4/lt~obsolete.m4
 *.pch
 
 # Libraries
-*.lib
-*.a
+#*.lib
+#*.a
 *.la
 *.lo
 
 # Shared objects (inc. Windows DLLs)
 *.dll
-*.so
-*.so.*
-*.dylib
+#*.so
+#*.so.*
+#*.dylib
 
 # Executables
 *.exe
