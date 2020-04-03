@@ -5,7 +5,7 @@ cd ffmpeg-4.2.2
 if [ -d /usr/local/cuda-10.2/ ]; then
   EXTRA_CFLAGS="-I${HOME}/ffmpeg_build/include\ -I/usr/local/cuda-10.2/include"
   EXTRA_LDFLAGS="-L$HOME/ffmpeg_build/lib\ -L/usr/local/cuda-10.2/lib64"
-  EXTRA_NVIDIA_ENABLE="--enable-cuda --enable-cuvid --enable-nvenc --enable-lipnpp"
+  EXTRA_NVIDIA_ENABLE="--enable-cuda --enable-cuvid --enable-nvenc --enable-libnpp"
 else
   EXTRA_CFLAGS="-I$HOME/ffmpeg_build/include"
   EXTRA_LDFLAGS="-L$HOME/ffmpeg_build/lib"
