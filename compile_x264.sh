@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd x264
+cd packages/x264
 if [ -f /etc/redhat-release ]; then
     PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" --enable-static --enable-pic && make -j `nproc` && make install
 fi

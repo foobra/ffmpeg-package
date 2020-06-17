@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd ffmpeg-4.2.2
+cd packages/ffmpeg-4.2.2
 
 if [ -d /usr/local/cuda-10.2/ ]; then
   EXTRA_CFLAGS="-I${HOME}/ffmpeg_build/include -I/usr/local/cuda-10.2/include -I/usr/local/include/ffnvcodec"
@@ -31,6 +31,7 @@ if [ -f /etc/redhat-release ]; then
   --enable-gpl \
   --enable-pic \
   --enable-libx264 \
+  --enable-libmp3lame \
   --enable-nonfree \
   --enable-static \
   --disable-shared \
@@ -56,6 +57,7 @@ if [ -f /etc/lsb-release ]; then
   --enable-gpl \
   --enable-pic \
   --enable-libx264 \
+  --enable-libmp3lame \
   --enable-nonfree \
   --enable-static \
   --disable-shared \
