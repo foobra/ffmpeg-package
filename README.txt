@@ -2,7 +2,7 @@
 sudo yum install -y autoconf automake bzip2 bzip2-devel  libtool mercurial zlib-devel
 sudo yum install centos-release-scl -y && sudo yum install devtoolset-9 -y && echo "source /opt/rh/devtoolset-9/enable"  >> ~/.bashrc && source ~/.bashrc && sudo ln -s /opt/rh/devtoolset-9/root/usr/bin/g++ /usr/bin/c++ 
 
-sudo yum install -y git mesa-libGLES-devel libX11-devel xz-devel bzip2-devel libva-devel java-1.8.0-openjdk java-1.8.0-openjdk-devel libva-vdpau-driver
+sudo yum install -y git mesa-libGLES-devel libX11-devel xz-devel bzip2-devel libva-devel java-1.8.0-openjdk java-1.8.0-openjdk-devel 
 
 sudo yum install epel-release -y && sudo yum install -y cmake3 && sudo ln -s /usr/bin/cmake3 /usr/bin/cmake 
 
@@ -14,7 +14,7 @@ sudo add-apt-repository ppa:ubuntu-toolchain-r/test && sudo apt update && sudo a
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 900 && sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 900
 
-sudo apt-get install -y git cmake libgles2-mesa-dev libbz2-dev liblzma-dev libva-dev openjdk-8-jdk libvdpau-dev
+sudo apt-get install -y git cmake libgles2-mesa-dev libbz2-dev liblzma-dev libva-dev openjdk-8-jdk
 
 sudo apt-get install -y autoconf automake build-essential libtool zlib1g-dev
 

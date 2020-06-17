@@ -33,6 +33,7 @@ if [ -f /etc/redhat-release ]; then
   --enable-libx264 \
   --enable-libmp3lame \
   --disable-vaapi \
+  --disable-vdpau \
   --enable-nonfree \
   --enable-static \
   --disable-shared \
@@ -60,6 +61,7 @@ if [ -f /etc/lsb-release ]; then
   --enable-libx264 \
   --enable-libmp3lame \
   --disable-vaapi \
+  --disable-vdpau \
   --enable-nonfree \
   --enable-static \
   --disable-shared \
