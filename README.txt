@@ -16,7 +16,7 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 900 && sudo u
 
 sudo apt-get install -y git cmake libgles2-mesa-dev libbz2-dev liblzma-dev libva-dev openjdk-8-jdk
 
-sudo apt-get insatall -y autoconf automake build-essentialv libtool zlib1g-dev
+sudo apt-get install -y autoconf automake build-essential libtool zlib1g-dev
 
 3. sh unpackage.sh
 4. sh compile.sh
