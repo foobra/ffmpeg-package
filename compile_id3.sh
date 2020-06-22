@@ -6,12 +6,7 @@ fi
 
 if [ -f /etc/lsb-release ]; then
 	PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" && \
-PATH="$HOME/bin:$PATH" make -j `nproc` && make installo
+PATH="$HOME/bin:$PATH" make -j `nproc` && make install
 fi
 cd -
 
-
-
-
-PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" && \
-PATH="$HOME/bin:$PATH" make -j `nproc` && make installo
